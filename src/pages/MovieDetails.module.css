@@ -1,0 +1,15 @@
+.detailsContainer {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* agrega un ancho maximo a mis columnas */
+
+.column {
+    max-width: 400px;
+}
+
+.movieImg {
+    border-radius: 15px;
+}

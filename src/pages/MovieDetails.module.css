@@ -1,6 +1,8 @@
 .detailsContainer {
     display: flex;
     justify-content: center;
+    /* esto lo que hace es empujar hacia abajo el elemento cuando no haya mas lugar  */
+    flex-wrap: wrap;
 }
 
 
@@ -8,8 +10,20 @@
 
 .column {
     max-width: 400px;
+    width: 80%;
+    height: auto;
+    height: 80%;
+    margin: 15px;
 }
 
 .movieImg {
     border-radius: 15px;
+}
+
+.movieData {
+    font-size: 1.5rem;
+}
+
+.firstItem {
+    margin-top: 0;
 }

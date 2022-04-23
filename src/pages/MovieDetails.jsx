@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import { useState, useEffect } from "react";
 import get from "../utils/httpClients";
 import Spinner from "../components/Spinner";
+import getMovieImg from "../utils/getMovieImg";
 
 export function MovieDetails() {
 	// este nos va a traer el id que viene como parametro
@@ -25,7 +26,7 @@ export function MovieDetails() {
 	if (!movie) {
 		return null;
 	}
-	const imageUrl = "https://image.tmdb.org/t/p/w500" + movie.poster_path;
+	const imageUrl = getMovieImg(movie.poster_path, 500);
 	return (
 		<div className={styles.detailsContainer}>
 			<img

@@ -18,6 +18,9 @@ export default function SearchBar() {
 			<div className={styles.searchBox}>
 				<input
 					className={styles.searchInput}
+					type="text"
+					placeholder="Title"
+					aria-label="Search Movies"
 					value={search}
 					onChange={(e) => {
 						// debounce
@@ -26,10 +29,8 @@ export default function SearchBar() {
 						history.push("/?search=" + value);
 					}}
 				></input>
-				<button className={styles.searchButton} type="submit">
-					{/* el icono lo pongo como componente */}
-					<FaSearch size={20} />
-				</button>
+				{/* el icono lo pongo como componente */}
+				<FaSearch color="black" className={styles.searchButton} size={20} />
 			</div>
 		</form>
 	);

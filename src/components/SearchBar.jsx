@@ -1,11 +1,9 @@
 import styles from "./SearchBar.module.css";
 import { FaSearch } from "react-icons/fa";
-import { useHistory } from "react-router-dom";
-import useQuery from "./hooks/useQuery";
+import { useSearchParams } from "react-router-dom";
 
 export default function SearchBar() {
-	const history = useHistory();
-	const query = useQuery();
+	const [query, setQuery] = useSearchParams();
 	const search = query.get("search");
 
 	// funcionalidad de la barra de busqueda
@@ -25,8 +23,7 @@ export default function SearchBar() {
 					onChange={(e) => {
 						// debounce
 						const value = e.target.value;
-
-						history.push("/?search=" + value);
+						setQuery({ search: value });
 					}}
 				></input>
 				{/* el icono lo pongo como componente */}

@@ -1,5 +1,11 @@
 import styles from "./App.module.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+	BrowserRouter as Router,
+	Routes,
+	Route,
+	Link,
+	Navigate,
+} from "react-router-dom";
 import { MovieDetails } from "./pages/MovieDetails";
 import LandingPage from "./pages/LandingPage";
 
@@ -12,15 +18,12 @@ export default function App() {
 				</Link>
 			</header>
 			<main>
-				<Switch>
-					<Route exact path="/movies/:movieId">
-						<MovieDetails />
-					</Route>
+				<Routes>
+					<Route path="/movies/:movieId" element={<MovieDetails />} />
 					{/* esta va a ser la ruta principal */}
-					<Route path="/">
-						<LandingPage />
-					</Route>
-				</Switch>
+					<Route path="/" element={<LandingPage />} />
+					<Route path="*" element={<Navigate replace to="/" />} />
+				</Routes>
 			</main>
 		</Router>
 	);

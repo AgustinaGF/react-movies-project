@@ -1,8 +1,6 @@
 const API = process.env.REACT_APP_API
 const TOKEN = process.env.REACT_APP_TOKEN
 
-console.log(API)
-console.log(TOKEN)
 export default function get(path) {
     return fetch(API + path, {
         headers: {
